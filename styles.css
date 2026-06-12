@@ -33,15 +33,56 @@ html {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   margin: 0;
   min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  z-index: -2;
   background:
+    radial-gradient(circle at 11% 18%, var(--ink) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 38% 62%, var(--ink) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 71% 24%, var(--ink) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 89% 74%, var(--ink) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 24% 82%, var(--ink) 0 1px, transparent 1.5px),
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px),
     var(--bg);
-  background-size: 56px 56px;
-  color: var(--text);
-  line-height: 1.6;
+  background-size:
+    173px 113px,
+    229px 149px,
+    197px 181px,
+    263px 167px,
+    311px 211px,
+    56px 56px,
+    56px 56px,
+    auto;
+  opacity: 0.72;
+}
+
+body::after {
+  z-index: -1;
+  color: oklch(0.18 0 0 / 0.24);
+  font: 700 12px/1 "Courier New", Consolas, ui-monospace, monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow: hidden;
+  content: ".      +         .       *          .     +        .          *       .      +          .       *       .     +       .      *      .       +       .       *       .      +      .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .";
+  transform: translate3d(0, 0, 0);
+  animation: star-drift 42s linear infinite;
 }
 
 img {
@@ -635,6 +676,20 @@ li {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  body::after {
+    animation: none !important;
+  }
+}
+
+@keyframes star-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-56px, -28px, 0);
   }
 }
 

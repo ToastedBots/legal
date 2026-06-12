@@ -80,9 +80,28 @@ body::after {
   white-space: pre-wrap;
   word-break: break-all;
   overflow: hidden;
-  content: ".      +         .       *          .     +        .          *       .      +          .       *       .     +       .      *      .       +       .       *       .      +      .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .      +      .       *       .      +       .       *       .";
-  transform: translate3d(0, 0, 0);
-  animation: star-drift 42s linear infinite;
+  content: ".      +         .       *          .     +        .          *       .      +          .       *       .     +       .      *      .       +       .       *       .      +      .       *       .      +      .       *       .";
+}
+
+.has-ascii-bg body::after {
+  display: none;
+}
+
+.ascii-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+  color: oklch(0.12 0 0 / 0.22);
+  font: 700 12px/1.48 "Courier New", Consolas, ui-monospace, monospace;
+  letter-spacing: 0.22em;
+  white-space: pre;
+  user-select: none;
+  transform: translateZ(0);
 }
 
 img {
@@ -681,15 +700,9 @@ li {
   body::after {
     animation: none !important;
   }
-}
 
-@keyframes star-drift {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-56px, -28px, 0);
+  .ascii-background {
+    opacity: 0.7;
   }
 }
 

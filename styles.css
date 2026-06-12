@@ -1,8 +1,10 @@
 :root {
   color-scheme: light;
   --bg: oklch(0.965 0 0);
-  --surface: oklch(0.995 0 0);
-  --surface-2: oklch(0.925 0 0);
+  --surface-solid: oklch(0.995 0 0);
+  --surface: oklch(0.995 0 0 / 0.82);
+  --surface-2: oklch(0.925 0 0 / 0.68);
+  --surface-strong: oklch(0.995 0 0 / 0.9);
   --ink: oklch(0.09 0 0);
   --text: oklch(0.2 0 0);
   --muted: oklch(0.42 0 0);
@@ -10,7 +12,7 @@
   --line-strong: oklch(0.1 0 0);
   --accent: oklch(0.1 0 0);
   --accent-strong: oklch(0.1 0 0);
-  --accent-soft: oklch(0.93 0 0);
+  --accent-soft: oklch(0.93 0 0 / 0.78);
   --page: min(1180px, calc(100% - 32px));
   --measure: 76ch;
   --radius: 0px;
@@ -21,7 +23,7 @@
 .bot-forwardlink {
   --accent: oklch(0.53 0.2 257);
   --accent-strong: oklch(0.35 0.16 257);
-  --accent-soft: oklch(0.935 0.04 257);
+  --accent-soft: oklch(0.935 0.04 257 / 0.78);
 }
 
 * {
@@ -116,7 +118,7 @@ a {
   z-index: 30;
   transform: translateY(-170%);
   background: var(--ink);
-  color: var(--surface);
+  color: var(--surface-solid);
   padding: 0.55rem 0.75rem;
   text-decoration: none;
 }
@@ -160,7 +162,7 @@ a {
   display: grid;
   place-items: center;
   overflow: hidden;
-  color: var(--surface);
+  color: var(--surface-solid);
   background: var(--ink);
   border: 2px solid var(--ink);
   font-weight: 900;
@@ -209,7 +211,7 @@ a {
 
 .nav-links a[aria-current="page"],
 .primary-action {
-  color: var(--surface);
+  color: var(--surface-solid);
   background: var(--ink);
 }
 
@@ -247,7 +249,7 @@ a {
 .callout,
 .redirect-panel,
 .document-brand-strip {
-  background: var(--surface);
+  background: var(--surface-strong);
   border: 1px solid var(--line-strong);
 }
 
@@ -262,7 +264,7 @@ a {
   gap: 1rem;
   align-items: center;
   padding: 0.35rem 0.65rem;
-  color: var(--surface);
+  color: var(--surface-solid);
   background: var(--ink);
   font-size: 0.82rem;
   font-weight: 900;
@@ -616,7 +618,7 @@ li {
 
 .site-footer {
   border-top: 2px solid var(--line-strong);
-  background: var(--surface);
+  background: var(--surface-strong);
 }
 
 .footer-inner {

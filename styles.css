@@ -26,6 +26,12 @@
   --accent-soft: oklch(0.935 0.04 257 / 0.78);
 }
 
+.bot-forwardmarket {
+  --accent: oklch(0.62 0.17 55);
+  --accent-strong: oklch(0.42 0.14 55);
+  --accent-soft: oklch(0.94 0.05 55 / 0.78);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -168,7 +174,8 @@ a {
   font-weight: 900;
 }
 
-.bot-forwardlink .brand-mark {
+.bot-forwardlink .brand-mark,
+.bot-forwardmarket .brand-mark {
   color: var(--accent-strong);
   background: var(--surface);
   border-color: var(--accent-strong);
@@ -216,7 +223,9 @@ a {
 }
 
 .bot-forwardlink .nav-links a[aria-current="page"],
-.bot-forwardlink .primary-action {
+.bot-forwardlink .primary-action,
+.bot-forwardmarket .nav-links a[aria-current="page"],
+.bot-forwardmarket .primary-action {
   color: white;
   background: var(--accent-strong);
   border-color: var(--accent-strong);
@@ -270,7 +279,8 @@ a {
   font-weight: 900;
 }
 
-.bot-forwardlink .window-bar {
+.bot-forwardlink .window-bar,
+.bot-forwardmarket .window-bar {
   background: var(--accent-strong);
 }
 
@@ -385,7 +395,9 @@ li {
 }
 
 .bot-forwardlink .pill.is-accent,
-.bot-forwardlink .bot-chip {
+.bot-forwardlink .bot-chip,
+.bot-forwardmarket .pill.is-accent,
+.bot-forwardmarket .bot-chip {
   color: var(--accent-strong);
   background: var(--accent-soft);
   border-color: var(--accent-strong);
@@ -409,7 +421,8 @@ li {
   white-space: pre;
 }
 
-.bot-forwardlink .ascii-block {
+.bot-forwardlink .ascii-block,
+.bot-forwardmarket .ascii-block {
   color: var(--accent-strong);
   background: var(--accent-soft);
 }

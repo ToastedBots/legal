@@ -2,7 +2,8 @@
   const doc = document.documentElement;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const layer = document.createElement("pre");
-  const glyphs = [".", ".", "+", "*"];
+  const glyphs = [".", ".", "'", "`", "+", "*"];
+  const tones = ["dim", "soft", "mid", "bright"];
   let stars = [];
   let cols = 0;
   let rows = 0;
@@ -32,14 +33,18 @@
 
     const seed = (cols * 73856093) ^ (rows * 19349663) ^ 0x46a11d;
     const next = random(seed);
-    const density = window.innerWidth < 720 ? 0.026 : 0.037;
+    const density = window.innerWidth < 720 ? 0.034 : 0.046;
     const count = Math.min(240, Math.max(68, Math.round(cols * rows * density)));
 
     stars = Array.from({ length: count }, function createStar(_, index) {
+      const depth = 0.3 + next() * 1.35;
+      const tone = tones[Math.min(tones.length - 1, Math.floor(depth * tones.length * 0.72))];
+
       return {
         x: Math.floor(next() * cols),
         y: Math.floor(next() * rows),
-        depth: 0.35 + next() * 1.25,
+        depth,
+        tone,
         phase: next() * Math.PI * 2,
         speed: 0.5 + next() * 0.9,
         glyph: glyphs[Math.floor(next() * glyphs.length)],
@@ -67,11 +72,18 @@
       const y = Math.floor((star.y + driftY) % rows);
       const shimmer = Math.sin(seconds * star.speed + star.phase);
 
-      grid[y][x] = shimmer > 0.58 ? star.alternate : star.glyph;
+      const activeTone = shimmer > 0.72 && star.tone !== "bright" ? "mid" : star.tone;
+      grid[y][x] = {
+        glyph: shimmer > 0.58 ? star.alternate : star.glyph,
+        tone: activeTone,
+      };
     }
 
-    layer.textContent = grid.map(function joinRow(row) {
-      return row.join("");
+    layer.innerHTML = grid.map(function joinRow(row) {
+      return row.map(function renderCell(cell) {
+        if (cell === " ") return " ";
+        return `<span class="star-${cell.tone}">${cell.glyph}</span>`;
+      }).join("");
     }).join("\n");
 
     if (!reduceMotion.matches) {

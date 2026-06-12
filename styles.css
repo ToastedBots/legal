@@ -53,6 +53,11 @@ body::before {
   opacity: 0.18;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   color: var(--accent-strong);
   font-weight: 700;
@@ -289,7 +294,7 @@ li {
 }
 
 .brand-strip img {
-  width: 100%;
+  width: min(220px, 100%);
   max-height: 86px;
   object-fit: contain;
 }
@@ -317,7 +322,7 @@ li {
 }
 
 .document-brand-strip img:last-child {
-  width: min(240px, 100%);
+  width: min(220px, 100%);
   max-height: 46px;
   object-fit: contain;
 }
@@ -568,7 +573,7 @@ li {
   }
 
   .document-brand-strip img:last-child {
-    width: 100%;
+    width: min(220px, 100%);
   }
 }
 

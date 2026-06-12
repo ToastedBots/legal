@@ -123,11 +123,19 @@ a:hover {
   border: 2px solid var(--ink);
   border-radius: 6px;
   font-weight: 900;
+  overflow: hidden;
 }
 
 .bot-forwardlink .brand-mark {
-  background: var(--accent);
+  background: var(--surface);
   border-color: var(--accent-strong);
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .nav-links {
@@ -252,6 +260,68 @@ li {
   background: var(--accent-soft);
 }
 
+.hero-media {
+  display: grid;
+  gap: 1rem;
+  align-self: stretch;
+}
+
+.asset-panel {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.brand-banner {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--ink);
+}
+
+.brand-strip {
+  display: grid;
+  grid-template-columns: minmax(92px, 0.35fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.brand-strip img {
+  width: 100%;
+  max-height: 86px;
+  object-fit: contain;
+}
+
+.brand-strip p {
+  margin: 0;
+}
+
+.document-brand-strip {
+  width: min(620px, 100%);
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+
+.document-brand-strip img:first-child {
+  width: 44px;
+  height: 44px;
+}
+
+.document-brand-strip img:last-child {
+  width: min(240px, 100%);
+  max-height: 46px;
+  object-fit: contain;
+}
+
 .meta-row {
   display: flex;
   flex-wrap: wrap;
@@ -323,6 +393,20 @@ li {
   justify-content: space-between;
   gap: 1rem;
   align-items: flex-start;
+}
+
+.bot-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.bot-card-logo {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border: 1px solid var(--accent-strong);
+  border-radius: 8px;
 }
 
 .bot-chip {
@@ -445,6 +529,10 @@ li {
   .toc {
     position: static;
   }
+
+  .brand-strip {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 520px) {
@@ -478,6 +566,10 @@ li {
   .article-body {
     padding: 1.25rem;
   }
+
+  .document-brand-strip img:last-child {
+    width: 100%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -503,7 +595,9 @@ li {
   .action-row,
   .site-footer,
   .skip-link,
-  .ascii-block {
+  .ascii-block,
+  .hero-media,
+  .document-brand-strip {
     display: none !important;
   }
 

@@ -4,61 +4,119 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ForwardLink Privacy Policy</title>
-  <style>
-    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    body { margin: 0; background: #0f172a; color: #e2e8f0; }
-    main { max-width: 920px; margin: 0 auto; padding: 56px 24px; }
-    h1 { font-size: 36px; margin: 0 0 8px; }
-    h2 { margin-top: 34px; color: #f8fafc; }
-    p, li { line-height: 1.65; color: #cbd5e1; }
-    a { color: #93c5fd; }
-    .meta { color: #94a3b8; margin-bottom: 32px; }
-  </style>
+  <meta name="description" content="Privacy Policy for the ForwardLink Discord bot, including data storage, message content, retention, security, and deletion requests.">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <main>
-    <h1>ForwardLink Privacy Policy</h1>
-    <p class="meta">Last updated: June 12, 2026</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Legal navigation">
+      <a class="brand-link" href="../"><span class="brand-mark" aria-hidden="true">F</span><span>ForwardLink Legal</span></a>
+      <div class="nav-links">
+        <a href="../terms/">Terms</a>
+        <a href="../privacy/" aria-current="page">Privacy</a>
+      </div>
+    </nav>
+  </header>
 
-    <p>This Privacy Policy explains how ForwardLink, a Discord bot operated for the Forward Assault community, collects, uses, stores, and deletes data.</p>
+  <main id="main" class="document-shell">
+    <header aria-labelledby="page-title">
+      <p class="kicker">ForwardLink legal document</p>
+      <h1 id="page-title" class="document-title">Privacy Policy</h1>
+      <p class="lede">This Privacy Policy explains how ForwardLink collects, uses, stores, secures, and deletes data for the Forward Assault community.</p>
+      <div class="meta-row">
+        <span class="pill">Last updated: June 12, 2026</span>
+        <span class="pill">No AI or machine learning training</span>
+        <span class="pill">Deletion requests through bot DMs</span>
+      </div>
+    </header>
 
-    <h2>1. Data we collect and store</h2>
-    <p>ForwardLink stores only the data needed to provide community support, moderation, boost reward, and staff activity features. Stored data may include:</p>
-    <ul>
-      <li>Discord user IDs and usernames.</li>
-      <li>Staff role IDs and staff membership information.</li>
-      <li>Server boost log timestamps, boost actions, and boost counts.</li>
-      <li>Booster claim data, such as platform and submitted in-game name.</li>
-      <li>Pending rename request data and owner decisions.</li>
-      <li>Aggregate staff activity counts by user, date, and category.</li>
-      <li>Ticket metadata, such as ticket channel ID, creator ID, status, type, priority, timestamps, and close reason.</li>
-      <li>Ticket transcript markdown, which may include message content, attachment links, and embed counts from ticket channels.</li>
-      <li>Data deletion request records, including request scope, status, timestamps, and owner decision metadata.</li>
-    </ul>
+    <div class="document-layout">
+      <aside class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">Contents</h2>
+        <ol>
+          <li><a href="#data-collected">Data we collect</a></li>
+          <li><a href="#message-content">Message content</a></li>
+          <li><a href="#data-use">How we use data</a></li>
+          <li><a href="#retention">Retention</a></li>
+          <li><a href="#deletion">Deletion requests</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#platforms">Discord and GitHub</a></li>
+          <li><a href="#changes">Changes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </aside>
 
-    <h2>2. Message content</h2>
-    <p>ForwardLink uses Message Content access for ticket transcripts, limited staff activity classification, and staff-submitted boost import workflows. Ticket transcripts may store message content for support and moderation recordkeeping. Staff statistics generally store aggregate counts rather than full message text.</p>
+      <article class="article-body">
+        <p>This Privacy Policy applies to ForwardLink, a Discord bot operated for the Forward Assault community.</p>
 
-    <h2>3. How we use data</h2>
-    <p>Data is used to operate ForwardLink features, including support tickets, transcript access, boost tracking, booster rewards, staff reporting, moderation workflows, and owner-reviewed data deletion requests. Data is not sold, used for advertising, or used to train machine learning or AI models.</p>
+        <section id="data-collected">
+          <h2>1. Data we collect and store</h2>
+          <p>ForwardLink stores only the data needed to provide community support, moderation, boost reward, and staff activity features. Stored data may include:</p>
+          <ul>
+            <li>Discord user IDs and usernames.</li>
+            <li>Staff role IDs and staff membership information.</li>
+            <li>Server boost log timestamps, boost actions, and boost counts.</li>
+            <li>Booster claim data, such as platform and submitted in-game name.</li>
+            <li>Pending rename request data and owner decisions.</li>
+            <li>Aggregate staff activity counts by user, date, and category.</li>
+            <li>Ticket metadata, such as ticket channel ID, creator ID, status, type, priority, timestamps, and close reason.</li>
+            <li>Ticket transcript markdown, which may include message content, attachment links, and embed counts from ticket channels.</li>
+            <li>Data deletion request records, including request scope, status, timestamps, and owner decision metadata.</li>
+          </ul>
+        </section>
 
-    <h2>4. Data retention</h2>
-    <p>Some data is stored longer than 30 days where needed for support, moderation, reward eligibility, historical records, auditability, and community operations. Ticket transcripts and boost or staff history may be retained until no longer needed or until an approved deletion request is processed.</p>
+        <section id="message-content">
+          <h2>2. Message content</h2>
+          <div class="callout"><strong>Message Content access:</strong> ForwardLink uses Message Content access for ticket transcripts, limited staff activity classification, and staff-submitted boost import workflows.</div>
+          <p>Ticket transcripts may store message content for support and moderation recordkeeping. Staff statistics generally store aggregate counts rather than full message text.</p>
+        </section>
 
-    <h2>5. Data deletion requests</h2>
-    <p>Users can request deletion of stored activity data through ForwardLink's bot-integrated direct message workflow. In DMs, the privacy command provides this policy, the Terms of Service, and a button to submit a deletion request. The user completes a modal with the requested deletion scope and reason. The bot sends the request to the bot owner for review, and the user is notified by DM when the request is approved or denied. Approved requests are processed against the bot database.</p>
+        <section id="data-use">
+          <h2>3. How we use data</h2>
+          <p>Data is used to operate ForwardLink features, including support tickets, transcript access, boost tracking, booster rewards, staff reporting, moderation workflows, and owner-reviewed data deletion requests.</p>
+          <p>Data is not sold, used for advertising, or used to train machine learning or AI models.</p>
+        </section>
 
-    <h2>6. Security</h2>
-    <p>ForwardLink stores production data on encrypted storage at rest through host-level disk encryption. Access to stored data is limited to authorized operators who need it for support, moderation, maintenance, or compliance purposes.</p>
+        <section id="retention">
+          <h2>4. Data retention</h2>
+          <p>Some data is stored longer than 30 days where needed for support, moderation, reward eligibility, historical records, auditability, and community operations. Ticket transcripts and boost or staff history may be retained until no longer needed or until an approved deletion request is processed.</p>
+        </section>
 
-    <h2>7. Discord and GitHub</h2>
-    <p>ForwardLink operates on Discord and uses Discord API data to provide bot features. This legal site is hosted through GitHub Pages. GitHub may process visitor information for security and service operation when this site is visited.</p>
+        <section id="deletion">
+          <h2>5. Data deletion requests</h2>
+          <div class="callout"><strong>Deletion workflow:</strong> Users can request deletion of stored activity data through ForwardLink's bot-integrated direct message workflow.</div>
+          <p>In DMs, the privacy command provides this policy, the Terms of Service, and a button to submit a deletion request. The user completes a modal with the requested deletion scope and reason. The bot sends the request to the bot owner for review, and the user is notified by DM when the request is approved or denied. Approved requests are processed against the bot database.</p>
+        </section>
 
-    <h2>8. Changes</h2>
-    <p>This policy may be updated when ForwardLink features, data handling, or compliance requirements change. The latest version will be available at this URL.</p>
+        <section id="security">
+          <h2>6. Security</h2>
+          <p>ForwardLink stores production data on encrypted storage at rest through host-level disk encryption. Access to stored data is limited to authorized operators who need it for support, moderation, maintenance, or compliance purposes.</p>
+        </section>
 
-    <h2>9. Contact</h2>
-    <p>For privacy questions or deletion requests, use ForwardLink's privacy command in direct messages with the bot or contact the Forward Assault support staff through the official Discord support process.</p>
+        <section id="platforms">
+          <h2>7. Discord and GitHub</h2>
+          <p>ForwardLink operates on Discord and uses Discord API data to provide bot features. This legal site is hosted through GitHub Pages. GitHub may process visitor information for security and service operation when this site is visited.</p>
+        </section>
+
+        <section id="changes">
+          <h2>8. Changes</h2>
+          <p>This policy may be updated when ForwardLink features, data handling, or compliance requirements change. The latest version will be available at this URL.</p>
+        </section>
+
+        <section id="contact">
+          <h2>9. Contact</h2>
+          <p>For privacy questions or deletion requests, use ForwardLink's privacy command in direct messages with the bot or contact the Forward Assault support staff through the official Discord support process.</p>
+        </section>
+      </article>
+    </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>ForwardLink Privacy Policy</span>
+      <span><a href="../">Legal Home</a> · <a href="../terms/">Terms of Service</a></span>
+    </div>
+  </footer>
 </body>
 </html>

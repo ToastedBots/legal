@@ -33,75 +33,11 @@ html {
 }
 
 body {
-  position: relative;
-  isolation: isolate;
   margin: 0;
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-}
-
-body::before {
-  z-index: -2;
-  background:
-    radial-gradient(circle at 11% 18%, var(--ink) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 38% 62%, var(--ink) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 71% 24%, var(--ink) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 89% 74%, var(--ink) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 24% 82%, var(--ink) 0 1px, transparent 1.5px),
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px),
-    var(--bg);
-  background-size:
-    173px 113px,
-    229px 149px,
-    197px 181px,
-    263px 167px,
-    311px 211px,
-    56px 56px,
-    56px 56px,
-    auto;
-  opacity: 0.72;
-}
-
-body::after {
-  z-index: -1;
-  color: oklch(0.18 0 0 / 0.24);
-  font: 700 12px/1 "Courier New", Consolas, ui-monospace, monospace;
-  white-space: pre-wrap;
-  word-break: break-all;
-  overflow: hidden;
-  content: ".      +         .       *          .     +        .          *       .      +          .       *       .     +       .      *      .       +       .       *       .      +      .       *       .      +      .       *       .";
-}
-
-.has-ascii-bg body::after {
-  display: none;
-}
-
-.ascii-background {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  overflow: hidden;
-  pointer-events: none;
-  color: oklch(0.12 0 0 / 0.22);
-  font: 700 12px/1.48 "Courier New", Consolas, ui-monospace, monospace;
-  letter-spacing: 0.22em;
-  white-space: pre;
-  user-select: none;
-  transform: translateZ(0);
 }
 
 img {
@@ -464,10 +400,7 @@ li {
   display: grid;
   place-items: center;
   padding: 1rem;
-  background:
-    radial-gradient(circle, var(--line) 1px, transparent 1px),
-    var(--surface);
-  background-size: 14px 14px;
+  background: var(--surface);
   border: 1px solid var(--line-strong);
 }
 
@@ -695,14 +628,6 @@ li {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-  }
-
-  body::after {
-    animation: none !important;
-  }
-
-  .ascii-background {
-    opacity: 0.7;
   }
 }
 

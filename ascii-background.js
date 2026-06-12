@@ -33,8 +33,8 @@
 
     const seed = (cols * 73856093) ^ (rows * 19349663) ^ 0x46a11d;
     const next = random(seed);
-    const density = window.innerWidth < 720 ? 0.034 : 0.046;
-    const count = Math.min(240, Math.max(68, Math.round(cols * rows * density)));
+    const density = window.innerWidth < 720 ? 0.042 : 0.058;
+    const count = Math.min(320, Math.max(68, Math.round(cols * rows * density)));
 
     stars = Array.from({ length: count }, function createStar(_, index) {
       const depth = 0.3 + next() * 1.35;
